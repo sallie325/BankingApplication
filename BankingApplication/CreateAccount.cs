@@ -34,7 +34,6 @@ namespace BankingApplication
             }
             else
             {
-                BankApplicationEntities bankdb = new BankApplicationEntities();
                 client.FirstName = txtFirstName.Text;
                 client.LastName = txtLastName.Text;
                 client.AccountNumber = txtAccountNumber.Text;

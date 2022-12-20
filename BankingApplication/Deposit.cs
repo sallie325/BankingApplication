@@ -38,7 +38,6 @@ namespace BankingApplication
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-           //int moneyToDeposit = this.client 
 
             int moneyToDeposit = Convert.ToInt32(txtAmount.Text.ToString());
 

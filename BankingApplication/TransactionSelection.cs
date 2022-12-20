@@ -48,7 +48,7 @@ namespace BankingApplication
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Withdraw withdraw = new Withdraw(client, dbContext);
+            Withdraw withdraw = new Withdraw(client, dbContext,wallet);
             withdraw.Show();
         }
 

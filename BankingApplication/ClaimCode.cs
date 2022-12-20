@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace BankingApplication
 {
@@ -25,19 +27,37 @@ namespace BankingApplication
 
         private void btnClaim_Click(object sender, EventArgs e)
         {
-         
-            this.wallet.Code = txtCode.Text;
-            var match = dbContext.E_Wallets.Any(x => x.Code == wallet.Code);
+            if (txtPin.Text == "" || txtCode.Text == "")
+            {
+                MessageBox.Show("Please enter the correct pin ", " Fill all information ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.wallet.Pin = Convert.ToInt32(txtPin.Text);
+                this.wallet.Code = txtCode.Text;
+
+                var match = dbContext.E_Wallets.Any(x => x.Pin == wallet.Pin && x.Code == wallet.Code);
+                var pin = dbContext.E_Wallets.Where(x => x.Pin == wallet.Pin).ToList();
+
+                txtPin.Clear();
+                txtCode.Clear();
+
+                if (pin.Count() == 0)
+                {
+                    MessageBox.Show("Pin does not Match", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                this.wallet.Amount = pin[0].Amount;
+                MessageBox.Show("You have claimed R" + wallet.Amount.ToString() , "Money Claimed"  , MessageBoxButtons.OK );
+                
+            }
             
-
-            MessageBox.Show("You have claimed " + this.wallet.Amount);
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            TransactionSelection transaction= new TransactionSelection(this.client, this.dbContext ,this.wallet);
+            TransactionSelection transaction = new TransactionSelection(this.client, this.dbContext, this.wallet);
             transaction.Show();
         }
     }

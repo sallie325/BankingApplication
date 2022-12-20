@@ -17,5 +17,6 @@ namespace BankingApplication
         public string Code { get; set; }
         public int CellNumber { get; set; }
         public int Amount { get; set; }
+        public int Pin { get; set; }
     }
 }

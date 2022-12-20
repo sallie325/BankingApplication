@@ -16,11 +16,12 @@ namespace BankingApplication
         UserInformation client;
         BankApplicationEntities bankdb;
         E_Wallets wallet;
-        public Withdraw(UserInformation client, BankApplicationEntities bankdb)
+        public Withdraw(UserInformation client, BankApplicationEntities bankdb, E_Wallets wallet)
         {
             InitializeComponent();
             this.client = client;
             this.bankdb = bankdb;
+            this.wallet = wallet;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -33,13 +34,13 @@ namespace BankingApplication
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
 
-            int moneyToDeposit = Convert.ToInt32(txtAmount.Text.ToString());
+            int moneyToWithdraw = Convert.ToInt32(txtAmount.Text.ToString());
 
-            if (moneyToDeposit > 0)
+            if (moneyToWithdraw > 0)
             {
                 try
                 {
-                    this.client.Balance -= moneyToDeposit;
+                    this.client.Balance -= moneyToWithdraw;
                     MessageBox.Show("Successfully Withdrew Money", "Success", MessageBoxButtons.OK);
                     txtAmount.Clear();
                     this.bankdb.UserInformations.AddOrUpdate(this.client);

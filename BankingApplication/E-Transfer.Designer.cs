@@ -37,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCellNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtPin = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -56,7 +58,7 @@
             this.btnTransfer.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTransfer.FlatAppearance.BorderSize = 0;
             this.btnTransfer.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(323, 361);
+            this.btnTransfer.Location = new System.Drawing.Point(323, 371);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(218, 71);
             this.btnTransfer.TabIndex = 22;
@@ -67,7 +69,7 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(266, 314);
+            this.txtAmount.Location = new System.Drawing.Point(266, 190);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(284, 32);
             this.txtAmount.TabIndex = 21;
@@ -76,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(261, 282);
+            this.label2.Location = new System.Drawing.Point(261, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 29);
             this.label2.TabIndex = 20;
@@ -86,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(305, 49);
+            this.label1.Location = new System.Drawing.Point(305, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 41);
             this.label1.TabIndex = 19;
@@ -95,7 +97,7 @@
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(266, 245);
+            this.txtCode.Location = new System.Drawing.Point(266, 256);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(284, 32);
             this.txtCode.TabIndex = 25;
@@ -104,7 +106,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(261, 213);
+            this.label3.Location = new System.Drawing.Point(261, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 29);
             this.label3.TabIndex = 24;
@@ -113,7 +115,7 @@
             // txtCellNumber
             // 
             this.txtCellNumber.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCellNumber.Location = new System.Drawing.Point(266, 179);
+            this.txtCellNumber.Location = new System.Drawing.Point(266, 117);
             this.txtCellNumber.Name = "txtCellNumber";
             this.txtCellNumber.Size = new System.Drawing.Size(284, 32);
             this.txtCellNumber.TabIndex = 27;
@@ -122,11 +124,29 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(261, 147);
+            this.label4.Location = new System.Drawing.Point(261, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 29);
             this.label4.TabIndex = 26;
             this.label4.Text = "Cell Number:";
+            // 
+            // txtPin
+            // 
+            this.txtPin.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPin.Location = new System.Drawing.Point(266, 333);
+            this.txtPin.Name = "txtPin";
+            this.txtPin.Size = new System.Drawing.Size(284, 32);
+            this.txtPin.TabIndex = 29;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(261, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 29);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Pin:";
             // 
             // E_Transfer
             // 
@@ -134,6 +154,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(846, 547);
+            this.Controls.Add(this.txtPin);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCellNumber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCode);
@@ -161,5 +183,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCellNumber;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPin;
+        private System.Windows.Forms.Label label5;
     }
 }

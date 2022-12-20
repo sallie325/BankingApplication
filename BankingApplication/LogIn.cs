@@ -27,21 +27,18 @@ namespace BankingApplication
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-
-
             if (txtAccountNumber.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please Enter in Your Information", "Fill all information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                BankApplicationEntities bankdb = new BankApplicationEntities();
                 this.client.AccountNumber = txtAccountNumber.Text;
                 this.client.UserPassword = txtPassword.Text;
 
                 var match = bankdb.UserInformations.Any(x => x.AccountNumber == client.AccountNumber && x.UserPassword == client.UserPassword);
 
-                var user = bankdb.UserInformations.Where(x => x.AccountNumber == client.AccountNumber).ToList();
+                var user = bankdb.UserInformations.Where(x => x.UserPassword == client.UserPassword).ToList();
 
                 txtAccountNumber.Clear();
                 txtPassword.Clear();
